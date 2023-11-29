@@ -26,6 +26,11 @@ int main(int argc, char* argv[]) {
   if (ARR_LEN>1) divide(ARR_LEN, arrPtr);
     
   printfarr(ARR_LEN, arrPtr);
+  
+  // free orig arr
+  for (int i=0; i<ARR_LEN; i++)
+    free(arrPtr[i]);
+  
   return 0;
 }
 
