@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
   // create & fill in orig ptr to int arr 
   int* arrPtr[ARR_LEN];
   for (int i=0; i<ARR_LEN; i++) {
-    arrPtr[i] = malloc(sizeof(int));
+    arrPtr[i] = malloc(sizeof(int*));
     *arrPtr[i] = rand()%ARR_LEN;
   }
   
@@ -63,7 +63,7 @@ void merge(int llen, int* larrPtr[], int rlen, int* rarrPtr[]) {
   // create temp ptr to int arr to store merged arrs
   int* temp[llen + rlen];
   for (int i=0; i < llen+rlen; i++)
-    temp[i] = malloc(sizeof(int));
+    temp[i] = malloc(sizeof(int*));
   
   // comp & copy orig values to temp arr values
   int lidx=0, ridx=0, tidx=0;
